@@ -1,0 +1,238 @@
+---
+title: "W2-R for Data Science"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+arr = array(5:12, dim = c(2,2))
+arr
+```
+ Accessing Aarray elements
+```{r}
+arr[2,1]
+```
+
+```{r}
+arr1 = array(1:9, dim = c(2,2,2))
+arr1
+```
+
+ 
+```{r}
+arr1[1,1]
+```
+```{r}
+arr1[2,2,1]
+```
+List
+```{r}
+lst <- list(a=98,b=c(5,42,55),c="hello")
+print(lst)
+lst["b"] = NULL
+print("***************************")
+print(lst)
+```
+Vector to list using as.list()
+```{r}
+vec_to_list <- as.list(c(5,6,4,1,11,1111))
+vec_to_list
+```
+Unlisting lists
+```{r}
+unlist(vec_to_list)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+named_lsit <- list(hark=4,mahesh="name",whatever=65)
+named_lsit['hark'] = "Hark Karkee"
+named_lsit['hark']
+```
+unlisting named list
+```{r}
+a_val <- unlist(named_lsit['a'])
+a_val
+```
+```{r}
+nlist <-  list(a=44,b="name",c=65)
+print("Before changing list")
+print(nlist)
+print("**************************************")
+print("Change list value")
+nlist['a'] <- "changed value"
+print("**************************************")
+print("After changing list value")
+print(nlist)
+```
+```{r}
+print("removing list element a from nlist")
+nlist["a"] <- NULL
+print(nlist)
+```
+
+Unlisting list elements
+```{r}
+tounlist <- list(a=c(3,4,5),b="hello this is list")
+print(tounlist)
+new_tounlist <- tounlist
+print(unlist(tounlist))
+```
+
+```{r}
+unlistvec_a <- unlist(new_tounlist["a"])
+```
+```{r}
+unlistvec_a
+```
+```{r}
+unlistvec_a_no_names <- unlist(new_tounlist["a"], use.names = FALSE)
+unlistvec_a_no_names
+```
+
+ 
+
+User defined function
+```{r}
+multiply_func <- function(x, y){
+  mul <- x*y
+  return(mul)
+}
+```
+Calling function
+```{r}
+print(multiply_func(44,52))
+print(multiply_func(4,5))
+```
+
+IF Statement
+```{r}
+x <- 5
+if(x%%2 == 0){
+  print("Even number")
+}
+```
+
+ IF-else Statement
+```{r}
+x <- 4
+if(x%%2 == 0){
+  print("Even number")
+}else{
+  print("Odd number")
+}
+```
+
+If-else ladder
+```{r}
+a <- 100
+if (a > 50){
+  print(" a is > 50")
+}else if (a < 50){
+  if(a%%2 == 0){
+    print("Even")
+  }else{
+    print("Odd")
+  }
+}
+```
+```{r}
+switch (object,
+  case = action
+)
+```
+
+Switch Statement
+```{r}
+x <-'c'
+switch (x,
+ a = c(1, 2, 3),
+    b = list(x = 0, y = 1),
+    c = {
+      cat("You choose c!\n")
+      list(name = "c", value = "something")
+    }
+)
+```
+
+```{r}
+x<-4
+y<-4
+type="+"
+   if (type == "+") {
+    print(x + y)
+  } else if (type == "-") {
+    print(x - y)
+  } else if (type == "x") {
+    print(x * y)
+  } else if (type == "/") {
+   print( x / y)
+  }else if (type == "%") {
+    print(x %% y)
+  } else {
+    print("Unknown type of operation")
+  }
+```
+```{r}
+x<-4
+y<-4
+type="-"
+   if (type == "+") {
+    print(x + y)
+  } else if (type == "-") {
+    print(x - y)
+  } else if (type == "x") {
+    print(x * y)
+  } else if (type == "/") {
+   print( x / y)
+  }else if (type == "%") {
+    print(x %% y)
+  } else {
+    print("Unknown type of operation")
+  }
+```
+ 
+```{r}
+calculator <- function(x, y, type) {
+  if (type == "+") {
+    x + y
+  } else if (type == "-") {
+    x - y
+  } else if (type == "x") {
+    x * y
+  } else if (type == "/") {
+    x / y
+  }else if (type == "%") {
+    x %% y
+  } else {
+    print("Unknown type of operation")
+  }
+}
+```
+```{r}
+print(calculator(4,5,"+"))
+print(calculator(4,5,"-"))
+print(calculator(4,5,"x"))
+print(calculator(4,5,"/"))
+```
+```{r}
+calculator(4,5,"x")
+```
+``` 
+ 
+ 
+

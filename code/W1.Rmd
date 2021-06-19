@@ -1,0 +1,152 @@
+---
+title: "R week1"
+output: html_notebook
+---
+
+
+```{r}
+install.packages("tidyverse")
+```
+ 
+
+```{r}
+help.start()
+```
+```{r}
+help("Math.Date")
+```
+
+Installing packages from Github
+
+1. Install devtools from CRAN
+```{r}
+install.packages("devtools")
+```
+
+2. Load devtools
+```{r}
+library(devtools) 
+```
+3. Install the package
+```{r}
+install_github("hadley/dplyr")
+```
+
+Mathematical Operations
+```{r}
+print(pi)
+print(2^3)
+print(sqrt(4))
+print(abs(-4))
+print(factorial(5))
+print(log(2, base = 10))
+print(exp(5.3))
+print(atan(11))
+print(cos(44))
+```
+ 
+ 
+ Vector
+```{r}
+ vec_t <- c("A", "B", "C", "D")
+vec_t
+```
+```{r}
+nVec <- c(11:100)
+nVec[c(50, 1, 78)]
+```
+
+```{r}
+named_vector <- c("id"="asd12","name"="jane doe")
+ 
+```
+```{r}
+is.vector(named_vector)
+```
+Accessing Vector Elements
+```{r}
+named_vector["id"]
+```
+```{r}
+nVec[c(1,6,8)]
+```
+```{r}
+vec_t[2]
+```
+
+
+
+Matrix
+```{r}
+ matA <- matrix(8:11, nrow=2, ncol=2)
+
+```
+```{r}
+matA
+```
+
+
+```{r}
+ matB <- matrix(999, nrow=3, ncol=3, byrow=TRUE)
+matB
+```
+
+
+
+
+
+```{r}
+  Vec1 <- 11:13
+Vec1
+```
+```{r}
+  Vec2 <- 33:35
+Vec2
+```
+
+```{r}
+  matC <- rbind(Vec1, Vec2)
+matC
+```
+```{r}
+
+  matD <- cbind(Vec1, Vec2)
+matD
+```
+
+Accessing matrix
+```{r}
+matC[1, 2]
+```
+First row
+```{r}
+matC[1,]
+```
+Only third column
+```{r}
+matC[,3]
+```
+```{r}
+ rownames(matC) <- c("row1", "row2")
+colnames(matC) <- c("col1", "col2", "col3")
+matC
+```
+
+
+DataFrame
+```{r}
+df <- data.frame(ID = 1:5, name = 
+            c("Hark","John","Alex","Max","Jane"), 
+            GENDER = c("M", "F", "F", "M", "F"))
+df
+```
+
+Check property using str(df)
+```{r}
+str(df)
+```
+
+```{r}
+df["ID"]
+```
+
